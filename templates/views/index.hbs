@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shanmuganathan GV</title>
+    <link rel="icon" href="./img/icon.png">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <p>Use this site to get weather and vaccine information</p>
+        <form>
+            <input id="pincode" placeholder="Pincode">
+            <input id="location" placeholder="Location">
+            <button>Search</button>
+        </form>
+        <p id="message-1"></p>
+        <p id="message-2"></p>
+        <br>
+        <table id="cowin">
+        </table>
+        <p id="cowinErr"></p>
+    </div>
+    {{>footer}}
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
