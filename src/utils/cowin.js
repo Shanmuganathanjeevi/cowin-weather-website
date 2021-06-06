@@ -14,8 +14,6 @@ const cowin = (pincode, callback) => {
             callback('Unable to connect to Cowin service!', undefined)
         } else if (body.error) {
             callback('Unable to find vaccine status', undefined)
-        } else if (body.sessions.length < 1) {
-            callback('Unable to find vaccine status', undefined)
         } else {
             const response = body.sessions;
             const finalResponse = arrayOut(response);
