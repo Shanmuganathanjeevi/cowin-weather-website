@@ -15,6 +15,7 @@ const cowin = (pincode, callback) => {
         } else if (body.error) {
             callback('Unable to find vaccine status', undefined)
         } else {
+            console.log("body :: " + body)
             const response = body.sessions;
             const finalResponse = arrayOut(response);
             callback(undefined, finalResponse)
@@ -26,6 +27,7 @@ const cowin = (pincode, callback) => {
 const arrayOut = (response) => {
     let output = [];
     let tmp;
+    console.log("response :: " + response)
     for (let i = 0; i < response.length; i++) {
         tmp = '<tr> <td>' + response[i].vaccine + '</td><td>' + response[i].name + '</td><td>' + response[i].address + '</td><td>' + response[i].fee_type + '</td><td>' + response[i].available_capacity_dose1 + '</td><td>' + response[i].available_capacity_dose2 + '</td></tr>'
         output.push(tmp);
