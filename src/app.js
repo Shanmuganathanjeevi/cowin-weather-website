@@ -5,9 +5,7 @@ const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast.js')
 const cowin = require('./utils/cowin.js')
 const app = express()
-
-console.log(__dirname);
-// console.log(path.join(__dirname,'../public'))
+const port = process.env.port || 3000
 
 const publicDirecPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -97,6 +95,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("server is up at 3000..");
+app.listen(port, () => {
+    console.log("server is up on port " + port);
 })
